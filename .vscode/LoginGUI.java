@@ -1,56 +1,57 @@
 import javax.swing.*;
-import java.awt.FlowLayout;
+import java.awt.*;
 
 public class LoginGUI {
     public static void main(String[] args) {
         // Create a JFrame object
         JFrame frame = new JFrame("Login GUI");
-
-        // Set layout
-        frame.setLayout(new FlowLayout());
-
-        // Set window size and close operation
+        frame.setLayout(new GridLayout(5, 1));
         frame.setSize(400, 300);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        // create a JButton object
-        JButton loginButton = new JButton("Login");
+        //----------------panels----------------
+        JPanel userPanel = new JPanel(new FlowLayout());
+        JPanel passwordPanel = new JPanel(new FlowLayout());
+        JPanel radioPanel = new JPanel(new FlowLayout());
+        JPanel checkPanel = new JPanel(new FlowLayout());
+        JPanel buttonPanel = new JPanel(new FlowLayout());
 
-        // Add the button to the frame
-        frame.add(loginButton);
-
-        //create a JLabel object
+        //-----------------components----------------
         JLabel usernameLabel = new JLabel("Username:");
+        JTextField usernameField = new JTextField(30); 
+
         JLabel passwordLabel = new JLabel("Password:");
-        // Add the labels to the frame
-        frame.add(usernameLabel);
-        frame.add(passwordLabel);
-
-        // Create JTextField and JPasswordField objects
-        JTextField usernameField = new JTextField(30);  
         JPasswordField passwordField = new JPasswordField(30);
-        // Add the text fields to the frame
-        frame.add(usernameField);
-        frame.add(passwordField);
 
-        // Create a JCheckBox object
-        JCheckBox rememberMeCheckBox = new JCheckBox("Remember Me");
-        // Add the checkbox to the frame
-        frame.add(rememberMeCheckBox);
-
-        // Create a JRadioButton object
         JRadioButton adminRadioButton = new JRadioButton("Admin");
         JRadioButton userRadioButton = new JRadioButton("User");
-        // Group the radio buttons
         ButtonGroup roleGroup = new ButtonGroup();
         roleGroup.add(adminRadioButton);
-        roleGroup.add(userRadioButton);     
+        roleGroup.add(userRadioButton); 
+        
+        JCheckBox rememberMeCheckBox = new JCheckBox("Remember Me");
+        
+        JButton loginButton = new JButton("Login");
 
-        // Add the radio buttons to the frame
-        frame.add(adminRadioButton);
-        frame.add(userRadioButton);
+        userPanel.add(usernameLabel);
+        userPanel.add(usernameField);
+        passwordField.add(passwordLabel);
+        passwordPanel.add(passwordLabel);
+        passwordPanel.add(passwordField);
+        radioPanel.add(adminRadioButton);
+        radioPanel.add(userRadioButton);
+        checkPanel.add(rememberMeCheckBox);
+        buttonPanel.add(loginButton);
 
-        // Make it visible
+        frame.add(userPanel);
+        frame.add(passwordPanel);
+        frame.add(radioPanel);
+        frame.add(checkPanel);
+        frame.add(buttonPanel);
+
+      
+
+       
         frame.setVisible(true);
     }
 }
