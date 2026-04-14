@@ -10,7 +10,7 @@ public class LoginGUI {
         frame.setLayout(new FlowLayout());
 
         // Set window size and close operation
-        frame.setSize(300, 200);
+        frame.setSize(400, 300);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         // create a JButton object
