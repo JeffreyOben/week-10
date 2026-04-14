@@ -10,7 +10,7 @@ public class LoginGUI {
         frame.setLayout(new FlowLayout());
 
         // Set window size and close operation
-        frame.setSize(400, 300);
+        frame.setSize(500, 400);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         // create a JButton object
@@ -27,8 +27,8 @@ public class LoginGUI {
         frame.add(passwordLabel);
 
         // Create JTextField and JPasswordField objects
-        JTextField usernameField = new JTextField(20);  
-        JPasswordField passwordField = new JPasswordField(20);
+        JTextField usernameField = new JTextField(30);  
+        JPasswordField passwordField = new JPasswordField(30);
         // Add the text fields to the frame
         frame.add(usernameField);
         frame.add(passwordField);
